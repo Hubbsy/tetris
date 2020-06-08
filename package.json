@@ -1,0 +1,19 @@
+{
+  "name": "tetris",
+  "version": "1.0.0",
+  "description": "second app in 30 app challenge, tetris game using JS ",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hubbsy/tetris.git"
+  },
+  "author": "Justin Hubbell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hubbsy/tetris/issues"
+  },
+  "homepage": "https://github.com/Hubbsy/tetris#readme"
+}
