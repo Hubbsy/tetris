@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //Randomly select a tetromino and starting position
     let random = Math.floor(Math.random() * theTetrominos.length)
-    console.log(random)
     let current = theTetrominos[random][currentRotation];
 
 //draw the tetromino
@@ -70,14 +69,14 @@ document.addEventListener('DOMContentLoaded', () => {
             squares[currentPosition + index].classList.add('tetrominos')
         })
     }
-
+draw()
 //undraw the teromino
     const undraw = () => {
         current.forEach(index => {
-            squares[currentPosition + index].classList.add('tetrominos')
+            squares[currentPosition + index].classList.remove('tetrominos')
         })
     }
 
-
+   
 
 });
