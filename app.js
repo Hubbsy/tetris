@@ -2,15 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //function that creates 200 divs for tetris board
-    const gridDivs = () => {
+    const gridDivs = (function() {
 
         for (var i = 0; i < 200; i++) {
             let block = document.createElement('div');
             board.appendChild(block); 
         };
-    }
-    gridDivs();
-//Tetris Grid
+    })();
+
+//Game Elements
 
     const grid = document.querySelector('.grid'); 
     let squares = Array.from(document.querySelectorAll('.grid div'));
