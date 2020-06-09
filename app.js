@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     for (var i = 0; i < 200; i++) {
         let block = document.createElement('div');
         board.appendChild(block); 
-    
     };
 
 //Tetris Grid
@@ -55,5 +54,30 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
 
     const theTetrominos = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
-    
+
+
+    let currentPosition = 3;
+    let currentRotation = 0; 
+
+//Randomly select a tetromino and starting position
+    let random = Math.floor(Math.random() * theTetrominos.length)
+    console.log(random)
+    let current = theTetrominos[random][currentRotation];
+
+//draw the tetromino
+    const draw = () => {
+        current.forEach(index => {
+            squares[currentPosition + index].classList.add('tetrominos')
+        })
+    }
+
+//undraw the teromino
+    const undraw = () => {
+        current.forEach(index => {
+            squares[currentPosition + index].classList.add('tetrominos')
+        })
+    }
+
+
+
 });
