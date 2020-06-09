@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
 
-//function that creates 200 divs for tetris board
+//Function that creates 200 divs for tetris board
     const gridDivs = (function() {
-
         for (var i = 0; i < 200; i++) {
             let block = document.createElement('div');
             board.appendChild(block); 
@@ -80,5 +79,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
    
+//move tetrominoes down the grid
+
+    const timerId = (function() {
+        setInterval(moveDown, 1000)
+    })();
+
+//move down function
+
+    function moveDown () {
+        undraw()
+        currentPosition += width
+        draw()
+    }
+
+
 
 });
