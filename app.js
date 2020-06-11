@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreDisplay = document.querySelector('#score');
     const startBtn = document.querySelector('#start-button');
     const width = 10;
-    let nextRandom = 0
-    let timerId
-    let score = 0
+    let nextRandom = 0;
+    let timerId;
+    let score = 0;
     const colors = [
         'orange',
         'red',
@@ -181,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPosition = 4
             draw()
             displayShape()
+            addScore()
         }
     };
 
@@ -234,12 +235,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 scoreDisplay.innerHTML = score
                 row.forEach(index => {
                     squares[index].classList.remove('taken');
+                    squares[index].classList.remove('tetromino');
+                    squares[index].style.backgroundColor = '';
                 })
                 const squaresRemoved = squares.splice(i, width)
-                console.log(squaresRemoved)
+                squares = squaresRemoved.concat(squares)
+                squares.forEach(cell => 
+                    grid.appendChild(cell)
+                )
             }    
         }
-    }
+    };
 
 
 
