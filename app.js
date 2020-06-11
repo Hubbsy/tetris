@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const startBtn = document.querySelector('#start-button');
     const width = 10;
     let nextRandom = 0
-    // let timerId
+    let timerId
     let score = 0
     const colors = [
         'orange',
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     };
     
-    timerId = setInterval(moveDown, 1000);
+    // timerId = setInterval(moveDown, 1000);
 
 //Functions to control the tetrominoes
 
@@ -199,6 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
         [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 3 + 1]
     ];
 
+
+//Function to display up next tetromino
     function displayShape() {
         displaySquares.forEach(square => {
             square.classList.remove('tetromino');
@@ -206,10 +208,38 @@ document.addEventListener('DOMContentLoaded', () => {
         upNextTetrominoes[nextRandom].forEach(index => {
             displaySquares[displayIndex + index].classList.add('tetromino')
         })
+    };
+
+
+//add functionality to start stop button
+    startBtn.addEventListener('click', () => {
+        if (timerId) {
+            clearInterval(timerId);
+            timerId = null; 
+        } else {
+            draw();
+            timerId = setInterval(moveDown, 1000)
+            nextRandom = Math.floor(Math.random() * theTetrominoes.length)
+            displayShape()
+        }
+    })
+
+
+//Function to add score
+    function addScore() {
+        for (var i = 0; i < 199; i += width) {
+            const row = [i, i + 1, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9];
+            if (row.every(index => squares[index].classList.contains('taken'))) {
+                score += 10
+                scoreDisplay.innerHTML = score
+                row.forEach(index => {
+                    squares[index].classList.remove('taken');
+                })
+                const squaresRemoved = squares.splice(i, width)
+                console.log(squaresRemoved)
+            }    
+        }
     }
-
-
-    
 
 
 
