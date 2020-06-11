@@ -182,6 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
             draw()
             displayShape()
             addScore()
+            gameOver()
         }
     };
 
@@ -247,6 +248,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+
+//Function for game over
+
+    function gameOver() {
+        if(current.some(index =>
+            squares[currentPosition + index].classList.contains('taken'))) {
+            scoreDisplay.innerHTML = 'Loser!';
+            clearInterval(timerId);
+        }
+    };
 
 
 
