@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     })();
 
+//Function that creates ten divs at bottom of grid to stop tetrominos
     const takenDivs = (function() {
         for (var i = 0; i < 10; i++) {
             let stopper = document.createElement('div');
@@ -25,8 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })();
 
-//Game Elements
 
+
+//Game Elements
     const grid = document.querySelector('.grid');
     let squares = Array.from(document.querySelectorAll('.grid div'));
     const scoreDisplay = document.querySelector('#score');
@@ -107,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     };
     
-    // timerId = setInterval(moveDown, 1000);
+
 
 //Functions to control the tetrominoes
 
@@ -118,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rotate()
         } else if (e.keyCode === 39) {
             moveRight()
-        } else if (e.keyCode ===40) {
+        } else if (e.keyCode === 40) {
             moveDown()
         }
     };
@@ -170,6 +172,9 @@ document.addEventListener('DOMContentLoaded', () => {
         draw()
     };
 
+
+
+
 //Function to stop tetrominoes from falling 
     function freeze() {
         if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
@@ -220,11 +225,13 @@ document.addEventListener('DOMContentLoaded', () => {
             timerId = null; 
         } else {
             draw();
-            timerId = setInterval(moveDown, 1000)
+            // timerId = setInterval(moveDown, 1000)
+            checkSpeed()
             nextRandom = Math.floor(Math.random() * theTetrominoes.length)
             displayShape()
-        }
-    })
+        } 
+    });
+
 
 
 //Function to add score
@@ -232,8 +239,9 @@ document.addEventListener('DOMContentLoaded', () => {
         for (var i = 0; i < 199; i += width) {
             const row = [i, i + 1, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9];
             if (row.every(index => squares[index].classList.contains('taken'))) {
-                score += 10
-                scoreDisplay.innerHTML = score
+                score += 10;
+                scoreDisplay.innerHTML = score;
+                checkSpeed();
                 row.forEach(index => {
                     squares[index].classList.remove('taken');
                     squares[index].classList.remove('tetromino');
@@ -259,6 +267,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+
+//Function to increase tetromino speed 
+    function checkSpeed() {
+        if (score < 10) {
+            timerId = setInterval(moveDown, 1000);
+        } 
+        if (score === 50) {
+            timerId = setInterval(moveDown,990);
+        } 
+        if (score === 100) {
+            timerId = setInterval(moveDown, 980);
+        }
+    };
 
 
 });
