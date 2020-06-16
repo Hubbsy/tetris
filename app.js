@@ -33,10 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let squares = Array.from(document.querySelectorAll('.grid div'));
     const scoreDisplay = document.querySelector('#score');
     const startBtn = document.querySelector('#start-button');
+    const currentLevel = document.querySelector('#level');
     const width = 10;
     let nextRandom = 0;
     let timerId;
     let score = 0;
+    let level = 1;
     const colors = [
         'orange',
         'red',
@@ -274,12 +276,19 @@ document.addEventListener('DOMContentLoaded', () => {
             timerId = setInterval(moveDown, 1000);
         } 
         if (score === 50) {
-            timerId = setInterval(moveDown,990);
+            timerId = setInterval(moveDown,995);
+            addLevel()
         } 
         if (score === 100) {
-            timerId = setInterval(moveDown, 980);
+            timerId = setInterval(moveDown, 990);
+            addLevel()
         }
     };
 
+
+    function addLevel() {
+        level += 1;
+        currentLevel.innerHTML = level;
+    };
 
 });
