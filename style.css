@@ -23,6 +23,7 @@
   flex-wrap: wrap;
   margin-left: 10px; 
   background-color: yellow;
+  border: 5px;
 }
 
 .mini-grid div {
