@@ -272,14 +272,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //Function to increase tetromino speed 
     function checkSpeed() {
-        if (score < 10) {
+        if (score < 50) {
             timerId = setInterval(moveDown, 1000);
         } 
-        if (score === 50) {
+        if (score === 50 && score < 100) {
             timerId = setInterval(moveDown,995);
             addLevel()
         } 
-        if (score === 100) {
+        if (score >= 100) {
             timerId = setInterval(moveDown, 990);
             addLevel()
         }
