@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let timerId;
     let score = 0;
     let level = 1;
+    const mySound = document.getElementById('#music');
     const colors = [
         'orange',
         'red',
@@ -223,6 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //event listener to start and stop the game
     startBtn.addEventListener('click', () => {
+        mySound.play();
         if (timerId) {
             clearInterval(timerId);
             timerId = null; 
