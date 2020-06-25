@@ -244,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 score += 10;
                 scoreDisplay.innerHTML = score;
                 checkSpeed()
+                addLevel()
                 row.forEach(index => {
                     squares[index].classList.remove('taken');
                     squares[index].classList.remove('tetromino');
@@ -272,25 +273,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //Function to increase tetromino speed 
     const checkSpeed = () => {
-            if (score === 0) {
-                clearInterval(timerId);
-                timerId = setInterval(moveDown, 1000);
-                // addLevel() 
-            } else if (score === 20) {
-                clearInterval(timerId);
-                timerId = setInterval(moveDown,800);  
-                // addLevel()         
-            } else if (score === 30) {
-                clearInterval(timerId);
-                timerId = setInterval(moveDown, 600);
-                // addLevel() 
-            }
-    };
+        if (score === 0) {
+            clearInterval(timerId);
+            timerId = setInterval(moveDown, 1000);
+        } else if (score === 20) {
+            clearInterval(timerId);
+            timerId = setInterval(moveDown,800);      
+        } else if (score === 50) {
+            clearInterval(timerId);
+            timerId = setInterval(moveDown, 600);
+        } else if (score >= 70) {
+            clearInterval(timerId);
+            timerId = setInterval(moveDown, 400);
+        };
+    }
 
 
     function addLevel() {
-        level += 1;
-        currentLevel.innerHTML = level;
-    };
+            if (score === 20) {
+                level += 1;
+                currentLevel.innerHTML = level;
+            };
+            if (score === 50) {
+                level += 1;
+                currentLevel.innerHTML = level;
+            };
+            if (score === 70) {
+                level += 1;
+                currentLevel.innerHTML = level;
+            };
+        }
 
 });
