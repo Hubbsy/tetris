@@ -4,7 +4,8 @@
   "description": "second app in 30 app challenge, tetris game using JS ",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Hubbsy/tetris/issues"
   },
-  "homepage": "https://github.com/Hubbsy/tetris#readme"
+  "homepage": "https://github.com/Hubbsy/tetris#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
 }
