@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'green',
         'blue'
     ];
+   
 
 
 //The Tetrominoes and their shapes
@@ -220,17 +221,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-//add functionality to start stop button
+//event listener to start and stop the game
     startBtn.addEventListener('click', () => {
         if (timerId) {
             clearInterval(timerId);
             timerId = null; 
         } else {
             draw();
-            // timerId = setInterval(moveDown, 1000)
             checkSpeed()
-            nextRandom = Math.floor(Math.random() * theTetrominoes.length)
-            displayShape()
+            nextRandom = Math.floor(Math.random() * theTetrominoes.length) 
+            displayShape() 
         } 
     });
 
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (row.every(index => squares[index].classList.contains('taken'))) {
                 score += 10;
                 scoreDisplay.innerHTML = score;
-                checkSpeed();
+                checkSpeed()
                 row.forEach(index => {
                     squares[index].classList.remove('taken');
                     squares[index].classList.remove('tetromino');
@@ -271,18 +271,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //Function to increase tetromino speed 
-    function checkSpeed() {
-        if (score < 50) {
-            timerId = setInterval(moveDown, 1000);
-        } 
-        if (score === 50 && score < 100) {
-            timerId = setInterval(moveDown,995);
-            addLevel()
-        } 
-        if (score >= 100) {
-            timerId = setInterval(moveDown, 990);
-            addLevel()
-        }
+    const checkSpeed = () => {
+            if (score === 0) {
+                clearInterval(timerId);
+                timerId = setInterval(moveDown, 1000);
+                // addLevel() 
+            } else if (score === 20) {
+                clearInterval(timerId);
+                timerId = setInterval(moveDown,800);  
+                // addLevel()         
+            } else if (score === 30) {
+                clearInterval(timerId);
+                timerId = setInterval(moveDown, 600);
+                // addLevel() 
+            }
     };
 
 
