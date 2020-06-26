@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let timerId;
     let score = 0;
     let level = 1;
-    const mySound = document.getElementById('#music');
+    const audio = new Audio("./ThemeA.mp3");
     const colors = [
         'orange',
         'red',
@@ -221,20 +221,35 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     };
 
+//Function to play audio
+    function myPlay(){ 
+        audio.play()
+    }
+
+    function myPause(){
+        audio.pause()
+    }
 
 //event listener to start and stop the game
     startBtn.addEventListener('click', () => {
-        mySound.play();
         if (timerId) {
             clearInterval(timerId);
-            timerId = null; 
+            timerId = null;
+            myPause() 
         } else {
+            myPlay()
             draw();
             checkSpeed()
             nextRandom = Math.floor(Math.random() * theTetrominoes.length) 
             displayShape() 
         } 
     });
+
+    // startBtn.addEventListener('click', () => {
+    //     myPlay();
+    // });
+
+   
 
 
 
