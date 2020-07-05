@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const takenDivs = (function() {
         for (var i = 0; i < 10; i++) {
             let stopper = document.createElement('div');
+            stopper.setAttribute("class", "base-block");
             stopper.classList.add('taken');
             board.appendChild(stopper);
         }
@@ -40,14 +41,20 @@ document.addEventListener('DOMContentLoaded', () => {
     let score = 0;
     let level = 1;
     const audio = new Audio("./ThemeA.mp3");
+    // const colors = [
+    //     'orange',
+    //     'red',
+    //     'purple',
+    //     'green',
+    //     'blue'
+    // ];
     const colors = [
-        'orange',
-        'red',
-        'purple',
-        'green',
-        'blue'
-    ];
-   
+        'url(./assets/green_block.png)',
+        'url(./assets/pink_block.png)',
+        'url(./assets/purple_block.png)',
+        'url(./assets/peach_block.png)',
+        'url(./assets/yellow_block.png)'
+      ];
 
 
 //The Tetrominoes and their shapes
@@ -100,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function draw() {
         current.forEach(index => {
             squares[currentPosition + index].classList.add('tetromino')
-            squares[currentPosition + index].style.backgroundColor = colors[random]
+            squares[currentPosition + index].style.backgroundImage = colors[random]
         })
     };
 
@@ -108,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function undraw() {
         current.forEach(index => {
             squares[currentPosition + index].classList.remove('tetromino')
-            squares[currentPosition + index].style.backgroundColor = ''
+            squares[currentPosition + index].style.backgroundImage = 'none'
 
         })
     };
@@ -287,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 row.forEach(index => {
                     squares[index].classList.remove('taken');
                     squares[index].classList.remove('tetromino');
-                    squares[index].style.backgroundColor = '';
+                    squares[index].style.backgroundImage = 'none';
                 })
                 const squaresRemoved = squares.splice(i, width)
                 squares = squaresRemoved.concat(squares)
@@ -317,13 +324,13 @@ document.addEventListener('DOMContentLoaded', () => {
             timerId = setInterval(moveDown, 1000);
         } else if (score === 20) {
             clearInterval(timerId);
-            timerId = setInterval(moveDown,800);      
+            timerId = setInterval(moveDown, 600);      
         } else if (score === 50) {
             clearInterval(timerId);
-            timerId = setInterval(moveDown, 600);
+            timerId = setInterval(moveDown, 400);
         } else if (score >= 70) {
             clearInterval(timerId);
-            timerId = setInterval(moveDown, 400);
+            timerId = setInterval(moveDown, 200);
         };
     }
 
