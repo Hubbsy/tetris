@@ -33,21 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid');
     let squares = Array.from(document.querySelectorAll('.grid div'));
     const scoreDisplay = document.querySelector('#score');
-    const startBtn = document.querySelector('#start-button');
+    const startBtn = document.querySelector('.start-button');
     const currentLevel = document.querySelector('#level');
     const width = 10;
     let nextRandom = 0;
     let timerId;
     let score = 0;
     let level = 1;
-    const audio = new Audio("./ThemeA.mp3");
-    // const colors = [
-    //     'orange',
-    //     'red',
-    //     'purple',
-    //     'green',
-    //     'blue'
-    // ];
+    const audio = new Audio("./assets/MACINTOSH PLUS - リサフランク420 _ 現代のコンピュー.mp3");
     const colors = [
         'url(./assets/green_block.png)',
         'url(./assets/pink_block.png)',
@@ -313,6 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
             squares[currentPosition + index].classList.contains('taken'))) {
             scoreDisplay.innerHTML = 'Loser!';
             clearInterval(timerId);
+            alert("Does Not Compute! Err0r!!")
         }
     };
 
