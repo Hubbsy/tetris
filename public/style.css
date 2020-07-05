@@ -1,6 +1,6 @@
 body {
   background-image: linear-gradient(to bottom right, rgba(255, 72, 0, 0.774), rgba(0, 140, 255, 0.938));;
-  height: 700px;
+  height: 615px;
 }
 
 
@@ -9,7 +9,7 @@ body {
     height: 400px; 
     display: flex;
     flex-wrap: wrap;
-    margin-left: 500px;
+    margin-left: 200px;
     align-items: center;
     /* outline: auto; */
 }
@@ -49,7 +49,7 @@ body {
 .outside {
   background-image: url("./assets/vaporwave-retro-futuristic-background-abstract-laser-grid-tunnel-neon-colors-with-glow-effect-night-sky-with-stars-wallpaper-cyberpunk-party-music-poster-hackathon-meeting_87408-169.jpg");
   background-repeat: no-repeat;
-  padding-left: 200px;
+  margin-left: 375px;
 }
 
 #start-button {
@@ -72,14 +72,7 @@ body {
   flex-wrap: wrap;  
 }
 
-/*
-#level {
-  margin-left: 5px;
-}
 
-#score {
-  margin-left: 5px;
-} */
 
 .base-block {
   background-image: url("./assets/blue_block.png");
@@ -89,8 +82,8 @@ body {
   background-image: url("./assets/navy_block.png");
 }
 
-.vapor {
+/* .vapor {
   background-image:url("./assets/maxresdefault.jpg");
   height: 200px;
   width: auto;
-}
+} */
