@@ -3,6 +3,10 @@ body {
   height: 615px;
 }
 
+html {
+  cursor: url("./assets/vaporwave-png-5.png"), auto;
+}
+
 
 .grid {
     width: 200px; 
@@ -53,34 +57,36 @@ body {
 }
 
 .start-button {
-  margin-left: 500px;
-  margin-bottom: 10px;
+  /* margin-left: 500px;
+  margin-bottom: 10px; */
   /* margin-top: 150px; */
   position: relative;
   text-align: center;
-  color: #fff;
+  color: black;
   letter-spacing: 1px;
   text-decoration: none;
   line-height: 23px;
   font-size: 10px;
   display: block;
   margin: 30px;
-  text-shadow: -1px -1px 0 #a84155;
-  background: #d25068;
-  border: 1px solid #d25068;
+  background: #3fcea3;
   width: 12rem;
-  background-image: linear-gradient(to bottom, #f66c7b, #d25068);
+  background-image: linear-gradient(to bottom, #6cf6df, #1fd1c2);
   border-radius: 5px;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
-    0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 #ad4257,
-    0 4px 2px rgba(0, 0, 0, 0.5);
+  padding-bottom: 5px;
+  margin-left: 600px;
+  /* box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 #42ada8,
+    0 4px 2px rgba(0, 0, 0, 0.5); */
 
 }
 
 
+
+
 .start-button:before {
-  background: #f0f0f0;
-  background-image: linear-gradient(#d0d0d0, #f0f0f0);
+  /* background: #f0f0f0; */
+  /* background-image: linear-gradient(#d0d0d0, #f0f0f0); */
   border-radius: 5px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
   position: absolute;
@@ -88,7 +94,7 @@ body {
   left: -6px;
   right: -6px;
   top: -6px;
-  bottom: -10px;
+  bottom: -5px;
   z-index: -1;
 }
 
@@ -115,6 +121,7 @@ body {
   margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
+  cursor: url("./assets/vaporwave-png-5.png"), auto;
 }
 
 .tally2 {
@@ -133,8 +140,6 @@ body {
   background-image: url("./assets/navy_block.png");
 }
 
-/* .vapor {
-  background-image:url("./assets/maxresdefault.jpg");
-  height: 200px;
-  width: auto;
-} */
+.module {
+  cursor: url("./assets/vapeSunny.jpg"), auto;
+}
