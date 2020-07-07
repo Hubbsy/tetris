@@ -1,11 +1,15 @@
+
+
+
 body {
   background-image: linear-gradient(to bottom right, rgba(255, 72, 0, 0.774), rgba(0, 140, 255, 0.938));;
-  height: 615px;
+  height: 605px;
   padding-top: 100px;
 }
 
 html {
   cursor: url("./assets/vaporwave-png-5.png"), auto;
+  font-family: 'Press Start 2P', cursive;
 }
 
 
@@ -57,6 +61,31 @@ html {
   margin-left: 375px;
 }
 
+.pillar {
+  /* background-image: url('./assets/vaporPillar.gif'); */
+  float: left;
+}
+
+.plant {
+  float: right;
+  margin-right: 125px;
+}
+
+.dolphin {
+  float: right;
+  /* margin-right: 100px; */
+  padding-top: 250px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.relax {
+  float:right;
+  /* padding-bottom: 100px; */
+  margin-right: 100px;
+  /* margin-bottom: 100px; */
+}
+
 .start-button {
   /* margin-left: 500px;
   margin-bottom: 10px; */
@@ -77,10 +106,8 @@ html {
   padding-bottom: 5px;
   margin-left: 600px;
   cursor: url("./assets/vaporwave-png-5.png"), auto;
+  font-family: 'Press Start 2P', cursive;
 
-  /* box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
-    0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 #42ada8,
-    0 4px 2px rgba(0, 0, 0, 0.5); */
 
 }
 
@@ -120,17 +147,17 @@ html {
 
 
 .tally {
-  margin-left: 575px;
+  margin-left: 530px;
   padding-right: 5px;
   display: flex;
   flex-wrap: wrap;
   cursor: url("./assets/vaporwave-png-5.png"), auto;
   float: left;
-  outline: inset;
-  background: #f0f0f0;
+  /* outline: inset; */
+  /* background: #f0f0f0; */
   /* background-image: linear-gradient(#81d5e0, #8bafeb); */
-  border-radius: 5px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
+  /* border-radius: 5px; */
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff; */
   color: #black;
 }
 
@@ -138,12 +165,13 @@ html {
   margin-left: 750px;
   display: flex;
   flex-wrap: wrap; 
-  outline: inset; 
-  margin-right: 610px;
-  background: #f0f0f0;
+  /* outline: inset;  */
+  margin-right: 520px;
+  /* background: #f0f0f0;
   background-image: linear-gradient(#d0d0d0, #f0f0f0);
-  border-radius: 5px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
+  border-radius: 5px; */
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff; */
+  font: press;
   color: black;
 }
 

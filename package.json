@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Hubbsy/tetris#readme",
   "dependencies": {
+    "aesthetic-css": "^1.0.1",
     "express": "^4.17.1",
+    "get-google-fonts": "^1.2.2",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.4"
   }
