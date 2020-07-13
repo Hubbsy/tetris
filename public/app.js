@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let timerId;
     let score = 0;
     let level = 1;
-    const audio = new Audio("./assets/MACINTOSH PLUS - リサフランク420 _ 現代のコンピュー-2.mp3");
+    // const music = document.querySelector("#music");
+    const audio = new Audio('https://tetris-audio.s3.us-east-2.amazonaws.com/vaporWaveQuint.mp3');
     const colors = [
         'url(./assets/green_block.png)',
         'url(./assets/pink_block.png)',
